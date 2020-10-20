@@ -1,0 +1,46 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} MMblog - blog o nauce programowania {% endblock %}</title>
+
+
+    <meta name="author" content="Mateusz Mikulski">
+    <meta name="description" content="MMBlog to miejsce, w którym opisuję w jaki sposób uczę sie programowania. Prezentuję tu moje projekty i źródła wiedzy.">
+    <meta name="keywords" content="python, django, AWS, bootstrap, HTML, CSS, SQL, postgresql, REST API, unittest, junior developer">
+
+    <link rel="icon" type="image/png" href="{% static 'images/favicon2.png' %}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontello.css' %}" type="text/css">
+</head>
+<body>
+
+    <div id="container">
+        <div class="flex-wrapper">
+            <header id='main-header'>
+
+                {% include 'blog/logo.html' %}
+                <nav>
+                {% include 'blog/navbar.html' %}
+                </nav>
+
+            </header>
+            <main>
+                {% block content %}
+
+                {% endblock %}
+            </main>
+            
+            
+            {% include 'blog/footer.html' %}
+        </div>
+    </div>
+
+</body>
+</html>

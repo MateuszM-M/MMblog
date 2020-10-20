@@ -1,0 +1,10 @@
+*.pyc
+*~
+__pycache__
+venv
+.DS_Store
+Blog_Concept_document.docx
+~$og_Concept_document.docx
+~*
+db.sqlite3
+/media

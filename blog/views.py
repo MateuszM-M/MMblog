@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
 from django.core.paginator import Paginator
+from .forms import CommentForm
 
 
 
@@ -14,11 +15,21 @@ def home(request):
 
 
 def viewing_post(request, slug):
-    comments = Comment.objects.filter(active=True)
-    
-    
     post = get_object_or_404(Article, slug=slug)
-    context = {'post':post, 'comments':comments}
+    comments = Comment.objects.filter(active=True)
+    new_comment = None
+    comment_form = CommentForm()
+    if request.method == "POST":
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            new_comment = comment_form.save(commit=False)
+            new_comment.post = post
+            new_comment.save()
+            return redirect(request.path_info)
+    
+    context = {'post':post, 'comments':comments,
+               'new_comment':new_comment,
+                'comment_form':comment_form}
     return render(request, 'blog/viewing_post.html', context)
 
 

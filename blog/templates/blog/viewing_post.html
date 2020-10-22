@@ -16,26 +16,43 @@
         </header>
         <div class='article-holder'>
             <article>
-               {{ post.post_content|linebreaksbr }}
+               {{ post.post_content|safe }}
+        </div>
                 <section>
                     <div id="comments">
-                        <h3>KOMENTARZE:</h3>
+                        <div class="article-holder">
+                            <hr>
+                            <h3>KOMENTARZE:</h3>
 
-                        {% for comment in post.comments.all %}
-                            <article>
-                                <div class="comment">
-                                    <h6>
-                                        Autor: {{ comment.author }}, 
-                                        data: {{ comment.created_date }}
-                                    </h6>
-                                    <p>{{ comment.comment_content|linebreaksbr }}</p>
-                                </div>
-                            </article>
-                        {% endfor %}
+                            {% for comment in post.comments.all %}
+                                <article>
+                                    <div class="comment">
+                                        <div class="com_author">
+                                            <strong>{{ comment.author }}</strong> &nbsp; &nbsp; &nbsp;
+                                        </div>
+                                        <div class="com_date">
+                                            {{ comment.created_date.hour }}:{{ comment.created_date.minute }} {{ comment.created_date.day }}/{{ comment.created_date.month }}/{{ comment.created_date.year }}
+                                        </div>
+                                        <div class="com_content">
+                                            <p>{{ comment.comment_content|linebreaksbr }}</p>
+                                        </div>
+                                    </div>
+                                </article>
+                            {% endfor %}
+                        </div>
+                        <div class="article-holder">
+                            <form method="POST" >
+                                {% csrf_token %}
+                                {{ comment_form.comment_content }}
+                                <br>
+                                {{ comment_form.author }}
+                                <input id="submitbtn" type="submit">
+                            </form>
+                        </div>
                     </div>
                 </section>
             </article>
-        </div>
+        
     </div>
 
 

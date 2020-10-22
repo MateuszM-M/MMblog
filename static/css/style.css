@@ -99,9 +99,8 @@ ul li a{
 
 .article{
   text-align: center;
-  padding: 10px;
+  padding-top: 10px;
   animation: opacity-change 2s;
-  margin-bottom: 0px;
   font-size: 16px;
 }
 
@@ -138,9 +137,13 @@ ul li a{
   transition: all .2s ease-in-out;
 }
 
+.odd{
+  padding-bottom: 10px;
+}
 
 .even{
   background-color: #f5f5f5;
+  padding-bottom: 10px;
 }
 
 .article-holder{
@@ -287,7 +290,10 @@ ul li a{
 
 #comments{
   text-align: left;
-  margin: 20px 10px 20px 10px;
+  margin-top: 20px;
+  background-color: #f5f5f5;
+  padding-top: 5px;
+  padding-bottom: 10px;
 }
 
 
@@ -296,6 +302,34 @@ ul li a{
 }
 
 .comment{
-  border: black solid 1px;
-  margin: 5px;
+  border: #bbb dashed 1px;
+  margin: 10px;
+  padding: 8px 8px 5px 8px;
 }
+
+.com_author{
+  font-size: 16px;
+  display: inline-block;
+}
+
+.com_date{
+  color: #404040;
+  font-size: 14px;
+  display: inline-block;
+}
+
+section{
+  padding: 0;
+  margin: 0;
+}
+
+#com_cont_form {
+  width: 95%;
+}
+
+
+
+
+
+
+

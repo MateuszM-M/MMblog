@@ -9,24 +9,24 @@
         {% else %}
             <div class="article odd">
         {% endif %}
-            <header>
-                <h1><a href="{% url 'MMblog:viewing_post' slug=post.slug %}"> {{post.title}} </a></h1>
-                <h4><i class="icon-calendar"></i> {{post.published_date.day}}/{{post.published_date.month}}/{{post.published_date.year}} <h4>
-                <div class="article-img">
-                    <a href="{% url 'MMblog:viewing_post' slug=post.slug %}">
-                        <img src={{ post.post_img.url }} alt="{{ post.title }}">
-                    </a>
+                <header>
+                    <h1><a href="{% url 'MMblog:viewing_post' slug=post.slug %}"> {{post.title}} </a></h1>
+                    <h4><i class="icon-calendar"></i> {{post.published_date.day}}/{{post.published_date.month}}/{{post.published_date.year}} <h4>
+                    <div class="article-img">
+                        <a href="{% url 'MMblog:viewing_post' slug=post.slug %}">
+                            <img src={{ post.post_img.url }} alt="{{ post.title }}">
+                        </a>
+                    </div>
+                </header>
+                <div class='article-holder'>
+                    <article>
+                        {{ post.post_pre_content }}
+                    </article>
                 </div>
-            </header>
-            <div class='article-holder'>
-                <article>
-                    {{ post.post_pre_content }}
-                </article>
+                <div class='more_button'>
+                    <h5><a href="{% url 'MMblog:viewing_post' slug=post.slug %}">Czytaj więcej</a></h5>
+                </div>
             </div>
-            <div class='more_button'>
-                <h5><a href="{% url 'MMblog:viewing_post' slug=post.slug %}">Czytaj więcej</a></h5>
-            </div>
-        </div>
     {% endfor %}
 
 

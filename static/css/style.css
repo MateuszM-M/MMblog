@@ -67,10 +67,10 @@ body{
 
 ul li{
   display: inline-block;
-  margin-left: 30px;
+  margin: 0 30px 0 30px;
   font-size: 20px;
   transition: all 0.2s ease-in-out;
-  margin-right: 30px
+  line-height: 36px;
 }
 
 ul li:hover{
@@ -81,13 +81,13 @@ ul li:hover{
 
 ul li a{
   text-decoration: none;
-  color: #404040
+  color: #404040;
 }
 
 .menu{
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+
 }
 
 
@@ -299,6 +299,7 @@ ul li a{
 
 #comments h3{
   font-size: 22px;
+  margin-left: 10px;
 }
 
 .comment{
@@ -324,12 +325,53 @@ section{
 }
 
 #com_cont_form {
-  width: 95%;
+  width: calc(100% - 25px);
+  resize: none;
+  margin: 0 10px 0 10px;
 }
 
+#com_auth_form{
+ margin-left: 10px;
+}
 
+#hmenu{
+  font-size: 30px;
+  display: none;
+  width: 26px;
+  margin-right: 20px;
+  height: 36px;
+}
 
+#toggle{
+  display: none;
+}
 
-
+@media only screen and (max-width: 768px) {
+  #hmenu{
+    display: flex;
+    cursor: pointer;
+    margin: 16px 20px 16px auto;
+  }
+  .menu{
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+  .menu a {
+    display: block;
+    margin: 0;
+  }
+  #toggle:checked + .menu{
+    display:block;
+  }
+  ul li{
+    display: block;
+    margin: 0;
+    border-bottom: 1px solid #cccccc;
+  }
+  ul{
+    padding-inline-start: 0;
+  }
+}
 
 

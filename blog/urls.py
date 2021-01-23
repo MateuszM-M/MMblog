@@ -8,5 +8,5 @@ urlpatterns = [
     path('o-mnie/', views.about_me, name='about_me'),
     path('projekty/', views.projects, name='projects'),
     path('kontakt/', views.contact, name='contact'),
-    path('<str:slug>/', views.viewing_post, name='viewing_post'),
+    path('<str:slug>/', views.post_details, name='post_details'),
 ]

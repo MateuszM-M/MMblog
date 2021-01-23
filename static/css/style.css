@@ -129,19 +129,26 @@ ul li a{
   position: relative;
 }
 
+.article-img:hover{
+  position: relative;
+}
+
+
 .article-img img{
   width: 100%;
   max-width: 800px;
   height: auto;
   margin: 0 auto;
-  padding: 10px 0px 15px 0px;
+  padding: 0;
   opacity: 1;
-
+  transition: all .2s ease-in-out;
 }
 
 .article-img img:hover{
   opacity: .9;
-  transition: all .2s ease-in-out;
+  -webkit-box-shadow: 0px 0px 50px 15px rgba(200,200,200,1);
+  -moz-box-shadow: 0px 0px 50px 15px rgba(200,200,200,1);
+  box-shadow: 0px 0px 50px 15px rgba(200,200,200,1);
 }
 
 .odd{

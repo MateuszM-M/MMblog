@@ -6,6 +6,7 @@ from .models import *
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ('title', 'status', 'published_date', 'created_date', 'updated_date')
+    prepopulated_fields = {'slug': ('title',)}
     
 
 @admin.register(Comment)

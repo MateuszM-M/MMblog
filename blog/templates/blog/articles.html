@@ -10,10 +10,10 @@
             <div class="article odd">
         {% endif %}
                 <header>
-                    <h1><a href="{% url 'MMblog:viewing_post' slug=post.slug %}"> {{post.title}} </a></h1>
+                    <h1><a href="{% url 'MMblog:post_details' slug=post.slug %}"> {{post.title}} </a></h1>
                     <h4><i class="icon-calendar"></i> {{post.published_date.day}}/{{post.published_date.month}}/{{post.published_date.year}} <h4>
                     <div class="article-img">
-                        <a href="{% url 'MMblog:viewing_post' slug=post.slug %}">
+                        <a href="{% url 'MMblog:post_details' slug=post.slug %}">
                             <img src={{ post.post_img.url }} alt="{{ post.title }}">
                         </a>
                     </div>
@@ -24,7 +24,7 @@
                     </article>
                 </div>
                 <div class='more_button'>
-                    <h5><a href="{% url 'MMblog:viewing_post' slug=post.slug %}">Czytaj więcej</a></h5>
+                    <h5><a href="{% url 'MMblog:post_details' slug=post.slug %}">Czytaj więcej</a></h5>
                 </div>
             </div>
     {% endfor %}

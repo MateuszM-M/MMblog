@@ -14,7 +14,7 @@ def home(request):
     return render(request, 'blog/articles.html', {'posts':posts})
 
 
-def viewing_post(request, slug):
+def post_details(request, slug):
     post = get_object_or_404(Article, slug=slug)
     comments = Comment.objects.filter(active=True)
     new_comment = None
@@ -30,7 +30,7 @@ def viewing_post(request, slug):
     context = {'post':post, 'comments':comments,
                'new_comment':new_comment,
                 'comment_form':comment_form}
-    return render(request, 'blog/viewing_post.html', context)
+    return render(request, 'blog/post_details.html', context)
 
 
 def about_me(request):

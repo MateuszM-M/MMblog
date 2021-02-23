@@ -1,15 +1,18 @@
 # MMblog - my blog about programming
 
-Simple blog app created with Django. My main focus was to gain basic skills in web development with this framework, HTML and CSS. This is my first web app created only by me.
-Link: https://m-m-blog.herokuapp.com/
+Simple blog app created with Django. My main focus was to gain basic skills in web development with this framework, HTML and CSS. This is my first bigger web app created only by me.
+
 
 ## Tech
 
  - Python 3.8
  - Django 3.1
+ - PostgreSQL
  - AWS RDS and S3
  - Heroku
  - Django ckeditor 6
+ - HTML
+ - CSS
  
 ## Features
  - CRUD of posts using admin panel

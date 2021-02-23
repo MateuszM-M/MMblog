@@ -4,14 +4,13 @@ from django.core.paginator import Paginator
 from .forms import CommentForm
 
 
-
 def home(request):
     posts = Article.objects.filter(status='Published')
     paginator = Paginator(posts, 4)
     
     page = request.GET.get('page')
     posts = paginator.get_page(page)
-    return render(request, 'blog/articles.html', {'posts':posts})
+    return render(request, 'blog/articles.html', {'posts': posts})
 
 
 def viewing_post(request, slug):
@@ -26,10 +25,9 @@ def viewing_post(request, slug):
             new_comment.post = post
             new_comment.save()
             return redirect(request.path_info)
-    
-    context = {'post':post, 'comments':comments,
-               'new_comment':new_comment,
-                'comment_form':comment_form}
+    context = {'post': post, 'comments': comments,
+               'new_comment': new_comment,
+                'comment_form': comment_form}
     return render(request, 'blog/viewing_post.html', context)
 
 

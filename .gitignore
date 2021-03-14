@@ -2,6 +2,7 @@
 *~
 __pycache__
 venv
+.env
 .DS_Store
 Blog_Concept_document.docx
 ~$og_Concept_document.docx

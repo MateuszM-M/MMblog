@@ -14,14 +14,13 @@ ALLOWED_HOSTS = ['m-m-blog.herokuapp.com',
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'MMblogDB',
-        'USER': 'MMblogAdm',
+        'NAME': 'dft776ct0j3g73',
+        'USER': 'mivehibudwxigh',
         'PASSWORD': os.environ.get('MMBLOG_DB_PASSWORD'),
-        'HOST': 'mmblogdb.cijqn9skmpbv.eu-central-1.rds.amazonaws.com',
+        'HOST': 'ec2-54-154-101-45.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }
-
 
 
 AWS_ACCESS_KEY_ID = os.environ.get('MMBLOG_S3_ACCESS_KEY')

@@ -41,6 +41,30 @@ Database is currently hosted on Heroku. At first I used AWS RDS but unfortunatel
  
 ## Setup 
 
+Clone repo `git clone https://github.com/MateuszM-M/MMblog`,
+
+Go to repo directory `cd MMblog`,
+
+Create virtual environment `python -m venv venv`,
+
+Activate environment `venv\scripts\activate`,
+
+Install required packages `pip install -r requirements.txt`,
+
+Rename MMblog/settings/`.env-example` to `.env`,
+
+Migrate database `python manage.py migrate`,
+
+Create superuser `python manage.py createsuperuser`,
+
+Make server up and running `python manage.py runserver`,
+
+Browse http://127.0.0.1:8000/
+
+Or
+
+Online demo: https://m-m-blog.herokuapp.com/
+
 ## Inspiration
 
 Some parts of code are inspired from:

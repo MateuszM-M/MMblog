@@ -1,7 +1,7 @@
-from django.db import models
-from django.utils import timezone
 from ckeditor.fields import RichTextField
+from django.db import models
 from django.urls import reverse
+from django.utils import timezone
 
 
 class Article(models.Model):
@@ -10,9 +10,12 @@ class Article(models.Model):
         ('Published', 'Published')
 )
     
-    author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    author = models.ForeignKey('auth.User', 
+                               on_delete=models.CASCADE)
     title = models.CharField(max_length=300)
-    post_img =  models.ImageField(null=True, blank=True, upload_to='post_images')
+    post_img =  models.ImageField(null=True, 
+                                  blank=True, 
+                                  upload_to='post_images')
     slug = models.SlugField(max_length=300, 
                             unique=True)
     post_pre_content = models.TextField()
@@ -25,10 +28,8 @@ class Article(models.Model):
     published_date = models.DateTimeField(default=timezone.now)
     updated_date = models.DateTimeField(auto_now=True)
 
-    
     class Meta:
         ordering = ('-published_date',)
-    
     
     def __str__(self):
         return self.title
@@ -36,7 +37,9 @@ class Article(models.Model):
   
 class Comment(models.Model):
     
-    post = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey(Article, 
+                             on_delete=models.CASCADE, 
+                             related_name='comments')
     author = models.CharField(max_length=30)
     comment_content = models.TextField(max_length=2000)
     created_date = models.DateTimeField(

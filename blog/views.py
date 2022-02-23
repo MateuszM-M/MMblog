@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from .models import *
 from django.core.paginator import Paginator
+from django.shortcuts import get_object_or_404, redirect, render
+
 from .forms import CommentForm
+from .models import *
 
 
 def home(request):

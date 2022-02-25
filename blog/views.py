@@ -26,7 +26,8 @@ def viewing_post(request, slug):
             new_comment.post = post
             new_comment.save()
             return redirect(request.path_info)
-    context = {'post': post, 'comments': comments,
+    context = {'post': post, 
+               'comments': comments,
                'new_comment': new_comment,
                 'comment_form': comment_form}
     return render(request, 'blog/viewing_post.html', context)

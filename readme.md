@@ -23,7 +23,7 @@ Simple blog app created with Django. My main focus was to gain basic skills in w
  - Python 
  - Django 
  - PostgreSQL
- - AWS S3
+ - Unittest
  - Heroku
  - Django ckeditor 6
  - HTML
@@ -38,6 +38,7 @@ Database is currently hosted on Heroku. At first I used AWS RDS but unfortunatel
  - Adding comments by readers
  - Hamburger menu in html&css
  - Pagination
+ - Unit test
  
 ## Setup 
 
